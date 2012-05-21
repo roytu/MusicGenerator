@@ -5,6 +5,10 @@ import javax.swing.*;
 import org.jfugue.*;
 
 public class MusicGenerator {
+	public static void main(String[] args){
+		new MusicGenerator();
+	}
+	
 	MusicGenerator(){
 		char[] Tones={'C','D','E','F','G','A','B'};
 		Random random = new Random();
@@ -25,12 +29,7 @@ public class MusicGenerator {
 		player.play(pattern);
 	}
 	
-	public static void main(String[] args){
-		new MusicGenerator();
-	}
-	
 	public static String buildString(ArrayList<Note> notes){
-		//TODO: Build string based on NoteArray
 		String fin="";
 		for(int i=0;i<notes.size();i++){
 			Note cnote=notes.get(i);
