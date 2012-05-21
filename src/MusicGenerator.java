@@ -1,16 +1,22 @@
 import java.awt.*;
+import java.util.Random;
 import javax.swing.*;
+import org.jfugue.*;
 
 public class MusicGenerator {
 	MusicGenerator(){
-		System.out.println("hey thur \nthis is new line");
-		JFrame frame = new JFrame("this is  frame");
-		frame.setSize(1000,500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
+		char[] Notes={'C','D','E','F','G','A','B'};
+		Random random = new Random();
+		System.out.println(Notes[random.nextInt(7)]);
 		
+		String result="";
+		for(int i=0;i<10;i++){
+			result+=Notes[random.nextInt(7)]+" ";
+		}
 		
+		Player player = new Player();
+		Pattern pattern = new Pattern(result);
+		player.play(pattern);
 	}
 	
 	public static void main(String[] args){
